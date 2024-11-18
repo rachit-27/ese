@@ -1,0 +1,25 @@
+1. Create database:- use college
+
+2. Create Collection:- db.createCollection("student")
+
+3. Insert:- db.student.insertOne({name:"Gopal", marks:75,city:"Sangli"})
+
+4. Insert many records:- db.student.insertMany([{name:"Rachit", marks:85,city:"Pune"},{name:"Hemant", marks:95,city:"Jammu"}}])
+
+5. Read: db.student.find()
+         db.student.find({marks:{$gt:75}})
+
+6. Update:- db.collection_name.updateOne({name:"Gopal"},{$set:{age:19}})
+            db.collection_name.updateMany({name:"Gopal"},{$set:{age:19}})
+
+7. Delete:- db.collection_name.deleteOne({name:"Gopal"})
+
+8. Delete Database:- db.dropDatabase()
+
+9. Filter Logical:- db.student.find({ $or:[{age:{$gt:25}},{city:"sangli"}]})
+
+10.Projection Filter:-db.student.find({age:{$gt:25}},{name:1,age:1})
+
+11. Regex filter for pattern Matching:- db.student.find({name:{$regex:/^N/}})
+
+12. Sorting and Pahgination:-db.student.find({age:{$gt:25}}).sort({age:-1}).limit(10)
